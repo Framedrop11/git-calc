@@ -28,3 +28,13 @@ document.getElementById('subtract').addEventListener('click', function() {
         alert('Please enter valid numbers');
     }
 });
+
+document.getElementById('multiply').addEventListener('click', function() {
+    const inputs = getInputs();
+    if (inputs.isValid) {
+        const result = inputs.num1 * inputs.num2;
+        console.log(`${inputs.num1} * ${inputs.num2} = ${result}`);
+    } else {
+        alert('Please enter valid numbers');
+    }
+});
