@@ -38,3 +38,13 @@ document.getElementById('multiply').addEventListener('click', function() {
         alert('Please enter valid numbers');
     }
 });
+
+document.getElementById('divide').addEventListener('click', function() {
+    const inputs = getInputs();
+    if (inputs.isValid && inputs.num2 !== 0) {
+        const result = inputs.num1 / inputs.num2;
+        console.log(`${inputs.num1} / ${inputs.num2} = ${result}`);
+    } else {
+        alert('Please enter valid numbers and ensure the second number is not zero');
+    }
+});
