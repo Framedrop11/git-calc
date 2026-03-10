@@ -1,1 +1,50 @@
-console.log("this is the project setup");
+function getInputs() {
+    const num1 = document.getElementById('num1').value;
+    const num2 = document.getElementById('num2').value;
+    
+    return {
+        num1: parseFloat(num1),
+        num2: parseFloat(num2),
+        isValid: !isNaN(num1) && !isNaN(num2) && num1 !== '' && num2 !== ''
+    };
+}
+
+document.getElementById('add').addEventListener('click', function() {
+    const inputs = getInputs();
+    if (inputs.isValid) {
+        const result = inputs.num1 + inputs.num2;
+        console.log(`${inputs.num1} + ${inputs.num2} = ${result}`);
+    } else {
+        alert('Please enter valid numbers');
+    }
+});
+
+document.getElementById('subtract').addEventListener('click', function() {
+    const inputs = getInputs();
+    if (inputs.isValid) {
+        const result = inputs.num1 - inputs.num2;
+        console.log(`${inputs.num1} - ${inputs.num2} = ${result}`);
+    } else {
+        alert('Please enter valid numbers');
+    }
+});
+
+document.getElementById('multiply').addEventListener('click', function() {
+    const inputs = getInputs();
+    if (inputs.isValid) {
+        const result = inputs.num1 * inputs.num2;
+        console.log(`${inputs.num1} * ${inputs.num2} = ${result}`);
+    } else {
+        alert('Please enter valid numbers');
+    }
+});
+
+document.getElementById('divide').addEventListener('click', function() {
+    const inputs = getInputs();
+    if (inputs.isValid && inputs.num2 !== 0) {
+        const result = inputs.num1 / inputs.num2;
+        console.log(`${inputs.num1} / ${inputs.num2} = ${result}`);
+    } else {
+        alert('Please enter valid numbers and ensure the second number is not zero');
+    }
+});
